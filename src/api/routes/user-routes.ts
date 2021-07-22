@@ -73,7 +73,7 @@ router.put('/refer', async (req, res) => {
     await savedUser.save();
 
     if (savedUser.referralIds.length === 3)
-      await users.givePro(user.id, Plan.One);
+      await users.givePro(user.id, Plan.Forever);
     
     res.send(savedUser);
   } catch (error) { sendError(res, 400, error); }
