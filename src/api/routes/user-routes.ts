@@ -72,7 +72,7 @@ router.put('/refer', async (req, res) => {
     savedUser.referralIds.push(targetUser.id);
     await savedUser.save();
 
-    if (savedUser.referralIds.length === 3)
+    if (savedUser.referralIds.length === 1000000000000000)
       await users.givePro(user.id, Plan.Forever);
     
     res.send(savedUser);
@@ -92,7 +92,7 @@ async function validateReferral(tag: string, user: User | any, savedUser: UserDo
 
   const targetUser = bot.users.cache.find(u => u.tag === tag);
   if (!targetUser)
-    throw new TypeError('Target user not found in any serverss.');
+    throw new TypeError('Target user not found in any servers.');
 
   const owns3PGGuild = bot.guilds.cache.some(g => g.ownerID === targetUser.id);
   if (!owns3PGGuild)
