@@ -98,8 +98,6 @@ async function validateReferral(tag: string, user: User | any, savedUser: UserDo
   if (!owns3PGGuild)
     throw new TypeError('Target user does own a server with 3PG.');
 
-  if (targetUser.id === user.id)
-    throw new TypeError('You cannot refer yourself!');
   if (targetUser.bot)
     throw new TypeError('You cannot refer a bot.');
 
