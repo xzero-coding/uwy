@@ -30,6 +30,6 @@ export default class ReadyHandler implements EventHandler {
     this.music.initialize();
     await this.timers.init();
 
-    this.bot.user?.setActivity(`Kop Ultra Made By Pixey#2021`);
+    this.bot.user?.setActivity(`Pixey-Bot Made by Pixey#2021 and Mustafa Abbasi#8459`);
   }
 }
